@@ -1,6 +1,10 @@
-import React from "react";
+import React from 'react';
+import './Pantalla.css';
 
+const Pantalla = ({ input }) => (
+  <div className='input'>
+    {input}      
+  </div>
+); 
 
-const Pantalla = () => {
-    
-}
+export default Pantalla;
