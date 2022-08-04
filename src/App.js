@@ -13,7 +13,11 @@ function App() {
 
    };
 const calcularResultado = () =>{
+  if(input){
   setInput(evaluate(input));
+  }else{
+    alert('valor no valido');
+  }
 }
 
 
