@@ -4,14 +4,17 @@ import freecodecamplogo from './imagenes/freecodecamp-logo.png';
 import Pantalla from './componentes/Pantalla';
 import BotonClear from './componentes/BotonClear';
 import { useState } from 'react';
+import {evaluate} from 'mathjs';
 
 function App() {
-   const [input, setinput] = useState('Hola');
+   const [input, setInput] = useState('Hola');
    const agregarInput = val => {
-        setinput(input + val);
+        setInput(input + val);
 
    };
-
+const calcularResultado = () =>{
+  setInput(evaluate(input));
+}
 
 
   return (
@@ -43,14 +46,14 @@ function App() {
       <Boton manejarClic={agregarInput}>*</Boton>
     </div>
     <div className='fila'>
-      <Boton manejarClic={agregarInput}>=</Boton>
+      <Boton manejarClic={calcularResultado}>=</Boton>
       <Boton manejarClic={agregarInput}>0</Boton>
       <Boton manejarClic={agregarInput}>.</Boton>
       <Boton manejarClic={agregarInput}>/</Boton>
     </div>
 
     <div className='fila'>
-      <BotonClear>Clear</BotonClear>
+      <BotonClear manejarClear={() => setInput('')}>Clear</BotonClear>
     </div>
 
     </div>
